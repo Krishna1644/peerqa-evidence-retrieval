@@ -1,0 +1,40 @@
+{
+  "zero_shot": {
+    "MRR": 0.3853,
+    "Recall@10": 0.7059,
+    "n_queries": 136
+  },
+  "finetuned": {
+    "MRR": 0.4012,
+    "MRR_std": 0.0744,
+    "Recall@10": 0.6989,
+    "n_folds": 5
+  },
+  "per_fold": [
+    {
+      "MRR": 0.4774,
+      "Recall@10": 0.7778,
+      "n_queries": 27
+    },
+    {
+      "MRR": 0.4349,
+      "Recall@10": 0.7407,
+      "n_queries": 27
+    },
+    {
+      "MRR": 0.2596,
+      "Recall@10": 0.5926,
+      "n_queries": 27
+    },
+    {
+      "MRR": 0.4259,
+      "Recall@10": 0.7407,
+      "n_queries": 27
+    },
+    {
+      "MRR": 0.4084,
+      "Recall@10": 0.6429,
+      "n_queries": 28
+    }
+  ]
+}

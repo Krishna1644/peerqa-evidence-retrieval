@@ -1,0 +1,100 @@
+{
+  "disclaimer": "These are self-contained demo papers built to show the Query2Doc ranking effect from our experiments. They are not copied from PeerQA papers (PeerQA is CC-BY-NC-SA and cannot be redistributed here). Qualitative questions and pseudo-documents follow cases documented in docs/reports/approach1_query2doc.md.",
+  "examples": [
+    {
+      "id": "quasi-newton",
+      "title": "Second-Order Optimization without Explicit Hessians",
+      "question": "How does the proposed method compare to Newton and standard quasi-Newton methods such as BFGS, L-BFGS, Chord, and Levenberg–Marquardt?",
+      "pseudo_doc": "In comparative evaluations, the proposed method demonstrates superior convergence rates and computational efficiency relative to Newton and standard quasi-Newton methods such as BFGS, L-BFGS, Chord, and Levenberg–Marquardt. Specifically, the proposed algorithm achieves a reduction in the number of iterations required to reach the predefined convergence criterion.",
+      "gold_ids": ["p3"],
+      "why_it_matters": "The reviewer question lists optimizer names. The evidence paragraph also talks about convergence rates and iteration counts. Query2Doc invents those answer-side terms, so BM25 can match the methods section instead of the related-work name-drop.",
+      "paragraphs": [
+        {
+          "id": "p0",
+          "heading": "Introduction",
+          "text": "Training large models remains expensive. First-order methods such as SGD and Adam are popular because they are easy to implement, but they can stall on poorly conditioned loss surfaces. This paper studies a practical second-order alternative that avoids forming the full Hessian."
+        },
+        {
+          "id": "p1",
+          "heading": "Related Work",
+          "text": "Newton's method and classical quasi-Newton updates including BFGS, L-BFGS, Chord, and Levenberg–Marquardt have a long history in unconstrained optimization. Prior work typically reports runtime, memory, and line-search heuristics, but rarely compares wall-clock training on modern neural architectures."
+        },
+        {
+          "id": "p2",
+          "heading": "Method",
+          "text": "We replace the explicit Hessian with a structured curvature sketch that can be applied with two extra backward passes. The sketch is damped for numerical stability and combined with a trust-region step. No extra labeled data is required."
+        },
+        {
+          "id": "p3",
+          "heading": "Experiments",
+          "text": "In comparative evaluations, the proposed optimizer reaches the target training loss with fewer iterations than Newton, BFGS, L-BFGS, Chord, and Levenberg–Marquardt. We also observe better computational efficiency on GPU, with a lower iteration count to the same convergence criterion and no extra line-search failures."
+        },
+        {
+          "id": "p4",
+          "heading": "Limitations",
+          "text": "The method is not intended as a drop-in replacement for every Adam training run. Hyperparameter transfer across tasks is incomplete, and very large batch sizes reduce the benefit of the curvature sketch."
+        }
+      ]
+    },
+    {
+      "id": "annotators",
+      "title": "Crowdsourced Evaluation of Idiomatic Expressions",
+      "question": "Are the annotators of the test sets native English speakers?",
+      "pseudo_doc": "The annotators employed for the test sets were exclusively native English speakers, selected to ensure linguistic proficiency and cultural familiarity with idiomatic expressions. This selection criterion was implemented to enhance the reliability and validity of the annotations, thereby minimizing potential biases introduced by non-native speakers.",
+      "gold_ids": ["p2"],
+      "why_it_matters": "A yes/no reviewer question is lexically thin. Query2Doc adds annotation-protocol language (proficiency, idioms, bias) that BM25 can latch onto in the data section.",
+      "paragraphs": [
+        {
+          "id": "p0",
+          "heading": "Introduction",
+          "text": "Idiomatic expressions remain difficult for language models. We release a test set focused on figurative usage and measure whether model explanations agree with human labels."
+        },
+        {
+          "id": "p1",
+          "heading": "Related Work",
+          "text": "Previous English benchmark construction often relies on undergraduate annotators or mixed-language crowdworkers. Several datasets report inter-annotator agreement without describing speaker background in detail."
+        },
+        {
+          "id": "p2",
+          "heading": "Data Collection",
+          "text": "All test-set annotators were native English speakers. We screened for linguistic proficiency with idiomatic expressions and documented this criterion to improve annotation reliability and reduce bias that non-native speakers might introduce on figurative items."
+        },
+        {
+          "id": "p3",
+          "heading": "Results",
+          "text": "Models trail humans on opaque idioms. Agreement is highest on decomposable phrases and lowest on culture-specific metaphors. We do not find a correlation with model size once prompting is held fixed."
+        }
+      ]
+    },
+    {
+      "id": "corpus-size",
+      "title": "Pretraining Corpus Construction for Domain-Adapted Models",
+      "question": "How many words are in the corpus in total?",
+      "pseudo_doc": "The corpus utilized in this study comprises a total of 1,245,678 words. This aggregate word count was determined following the preprocessing steps, which included tokenization, lemmatization, and the removal of stop words.",
+      "gold_ids": ["p1"],
+      "why_it_matters": "Failure mode: the LLM may hallucinate a fake number. For retrieval that is usually harmless. BM25 should still pick up corpus / tokenization / preprocessing. Never treat the pseudo-document as the answer.",
+      "paragraphs": [
+        {
+          "id": "p0",
+          "heading": "Introduction",
+          "text": "Domain-adapted language models need large in-domain text, but publications often omit the exact size of the pretraining mixture after filtering."
+        },
+        {
+          "id": "p1",
+          "heading": "Corpus",
+          "text": "After tokenization, lowercasing, and stop-word filtering, the pretraining corpus contains 184 million words drawn from papers, technical reports, and reviews. We also report document counts and a duplication rate estimated with MinHash."
+        },
+        {
+          "id": "p2",
+          "heading": "Preprocessing",
+          "text": "We apply sentence segmentation, language identification, and boilerplate removal. Tokenization uses a unigram model; we do not lemmatize because stemming hurt retrieval in pilot experiments."
+        },
+        {
+          "id": "p3",
+          "heading": "Experiments",
+          "text": "Downstream accuracy improves when the mixture includes peer-review text. Ablating reviews drops both retrieval MRR and generation factuality on held-out questions."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# Byte-compiled / virtualenvs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.local
+
+# Data (PeerQA is licensed separately and should be downloaded, not committed)
+data/peerqa/*.jsonl
+data/peerqa/*.json
+!data/peerqa/.gitkeep
+
+# Large or generated retrieval dumps
+results/approach1_runs.json
+checkpoints/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Streamlit / notebooks
+.streamlit/secrets.toml
+*.ipynb_checkpoints/

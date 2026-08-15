@@ -1,0 +1,56 @@
+{
+  "sentence": {
+    "plain": {
+      "MRR": 0.2388,
+      "Recall@10": 0.3897,
+      "n_queries": 136
+    },
+    "title_only": {
+      "MRR": 0.2492,
+      "Recall@10": 0.375,
+      "n_queries": 136
+    },
+    "title+section": {
+      "MRR": 0.2492,
+      "Recall@10": 0.4118,
+      "n_queries": 136
+    },
+    "title+section+pos": {
+      "MRR": 0.2544,
+      "Recall@10": 0.4412,
+      "n_queries": 136
+    },
+    "full_rich": {
+      "MRR": 0.2453,
+      "Recall@10": 0.4632,
+      "n_queries": 136
+    },
+    "section_only": {
+      "MRR": 0.2495,
+      "Recall@10": 0.4191,
+      "n_queries": 136
+    }
+  },
+  "paragraph": {
+    "plain": {
+      "MRR": 0.3467,
+      "Recall@10": 0.6471,
+      "n_queries": 136
+    },
+    "title_only": {
+      "MRR": 0.3471,
+      "Recall@10": 0.6765,
+      "n_queries": 136
+    },
+    "title+section": {
+      "MRR": 0.3528,
+      "Recall@10": 0.6765,
+      "n_queries": 136
+    },
+    "full_rich": {
+      "MRR": 0.3434,
+      "Recall@10": 0.6618,
+      "n_queries": 136
+    }
+  }
+}

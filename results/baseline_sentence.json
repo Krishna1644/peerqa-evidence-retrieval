@@ -1,0 +1,12 @@
+{
+  "BM25_sentence_plain": {
+    "MRR": 0.2388,
+    "Recall@10": 0.3897,
+    "n_queries": 136
+  },
+  "BM25_sentence_titled": {
+    "MRR": 0.2492,
+    "Recall@10": 0.375,
+    "n_queries": 136
+  }
+}

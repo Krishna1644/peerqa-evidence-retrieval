@@ -1,0 +1,11 @@
+datasets==2.19.0
+rank-bm25
+sentence-transformers
+torch
+tqdm
+bm25s
+PyStemmer
+openai
+numpy
+streamlit
+pandas

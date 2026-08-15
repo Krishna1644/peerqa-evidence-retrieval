@@ -1,0 +1,42 @@
+{
+  "eval_set": "PeerQA mapped-evidence questions (n=383)",
+  "granularity": "paragraph",
+  "note": "Primary numbers from the full evaluation reported in docs/final-report.pdf. Hugging Face permissive-subset runs (n=136) live in the other JSON files.",
+  "methods": [
+    {
+      "method": "BM25 (original query)",
+      "mrr": 0.3852,
+      "recall_at_1": 0.1929,
+      "recall_at_10": 0.6072,
+      "source": "approach1"
+    },
+    {
+      "method": "BM25 + Query2Doc (gpt-4o)",
+      "mrr": 0.4432,
+      "recall_at_1": 0.2500,
+      "recall_at_10": 0.6527,
+      "source": "approach1"
+    },
+    {
+      "method": "BM25 + RRF (original ⊕ Query2Doc)",
+      "mrr": 0.4174,
+      "recall_at_1": 0.2278,
+      "recall_at_10": 0.6323,
+      "source": "approach1"
+    },
+    {
+      "method": "PeerQA paper BM25 baseline",
+      "mrr": 0.4288,
+      "recall_at_1": null,
+      "recall_at_10": 0.6817,
+      "source": "published"
+    },
+    {
+      "method": "PeerQA paper Dragon+ (best published dense)",
+      "mrr": 0.4845,
+      "recall_at_1": null,
+      "recall_at_10": 0.6817,
+      "source": "published"
+    }
+  ]
+}

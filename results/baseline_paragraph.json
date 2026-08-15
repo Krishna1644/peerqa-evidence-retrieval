@@ -1,0 +1,12 @@
+{
+  "BM25_paragraph_plain": {
+    "MRR": 0.3467,
+    "Recall@10": 0.6471,
+    "n_queries": 136
+  },
+  "BM25_paragraph_titled": {
+    "MRR": 0.3471,
+    "Recall@10": 0.6765,
+    "n_queries": 136
+  }
+}

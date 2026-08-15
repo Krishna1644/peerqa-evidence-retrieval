@@ -1,0 +1,32 @@
+{
+  "bm25_original": {
+    "MRR": 0.3851557640813183,
+    "Recall@1": 0.19285876457519094,
+    "Recall@5": 0.47853277762461555,
+    "Recall@10": 0.6072363086453789,
+    "Recall@20": 0.7466601352767239
+  },
+  "bm25_query2doc": {
+    "MRR": 0.4432205918431542,
+    "Recall@1": 0.25003892123315435,
+    "Recall@5": 0.5086334863154025,
+    "Recall@10": 0.6526590730514024,
+    "Recall@20": 0.7808296669786089
+  },
+  "bm25_fused": {
+    "MRR": 0.41738441247065444,
+    "Recall@1": 0.227758677542989,
+    "Recall@5": 0.4912954283768224,
+    "Recall@10": 0.6322500217024033,
+    "Recall@20": 0.7673551495748714
+  },
+  "config": {
+    "model": "gpt-4o",
+    "bm25_library": "bm25s",
+    "tokenizer": "lowercase + Porter stemmer (PyStemmer) + English stopwords",
+    "n_repeat": 5,
+    "rrf_k": 60,
+    "n_queries_evaluated": 383,
+    "method": "Query2Doc (Wang et al., EMNLP 2023)"
+  }
+}
