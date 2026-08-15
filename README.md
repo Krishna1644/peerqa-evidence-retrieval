@@ -6,6 +6,8 @@ This is a **document-level information retrieval / RAG** project on [PeerQA](htt
 
 **Result:** Query2Doc + BM25 reaches **MRR 0.4432** on 383 evidence-mapped questions, beating the published PeerQA BM25 baseline of **0.4288** and lifting Recall@1 from **0.193 → 0.250** (+30% relative) vs. an original-query BM25 baseline.
 
+**Live demo:** [nlp-evidence-retrieval.streamlit.app](https://nlp-evidence-retrieval.streamlit.app/) — BM25 vs Query2Doc ranking on example papers.
+
 ![Retrieval pipeline](docs/figures/pipeline.png)
 
 ## Results
@@ -80,6 +82,7 @@ docs/                         Report, poster, figures
 
 ## Writeup
 
+- [Live demo](https://nlp-evidence-retrieval.streamlit.app/)
 - [Technical report](docs/final-report.pdf)
 - [Poster](docs/poster.pdf)
 - [Query2Doc method notes](docs/reports/approach1_query2doc.md)
