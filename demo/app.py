@@ -166,7 +166,7 @@ with tabs[1]:
             "Recall@1": item["recall_at_1"],
             "Recall@10": item["recall_at_10"],
         })
-    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+    st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
     fig_mrr = ROOT / "docs" / "figures" / "mrr.png"
     fig_recall = ROOT / "docs" / "figures" / "recall.png"
     cols = st.columns(2)
